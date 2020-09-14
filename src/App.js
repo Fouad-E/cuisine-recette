@@ -1,14 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SearchRecipe from "./components/SearchRecipe";
+import SimilarRecipe from "./components/SimilarRecipe";
+
+import "./App.css";
+
+require("dotenv").config();
 
 function App() {
   return (
     <div className="App">
-      <h1> Ma recette de cuisine </h1>
-
-      <input type="text" id="name" name="name" required
-       minlength="4" maxlength="8" size="10" />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <SearchRecipe />
+          </Route>
+          <Route path="/recipeInformation">
+            <SimilarRecipe />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
