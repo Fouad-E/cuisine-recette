@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
 import { Link } from "react-router-dom";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
 import getComplexRecipe from "../../api/getComplexRecipe";
 
-export default class SearcRecipe extends Component {
+class SearcRecipe extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,6 +14,8 @@ export default class SearcRecipe extends Component {
     };
     this.onHandleChange = this.onHandleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+
+    this.handleSetIdCurrentRecipe = this.handleSetIdCurrentRecipe.bind(this);
   }
 
   onHandleChange(e) {
@@ -31,6 +32,14 @@ export default class SearcRecipe extends Component {
     console.log("Cliqué !");
   }
 
+  handleSetIdCurrentRecipe = (e) => {
+    console.log("PROPS : ", this.props);
+    console.log("ID : ", e.target.alt);
+
+    const { setIdCurrentRecipe } = this.props;
+    setIdCurrentRecipe(e.target.alt);
+  };
+
   render() {
     const { data } = this.state;
     return (
@@ -45,12 +54,18 @@ export default class SearcRecipe extends Component {
 
         {data.map((recipe) => (
           <div>
-            <Link
-              to="/recipeInformation"
-              onClick={() => this.props.setIdCurrentRecipe(recipe.id)}
-            >
-              <img class="fit-picture" src={recipe.image} alt={recipe.title} />
-              <li key={recipe.id}>{recipe.title}</li>
+            <Link to="/recipeInformation">
+              <img
+                class="fit-picture"
+                src={recipe.image}
+                title={recipe.title}
+                alt={recipe.id}
+                onClick={this.handleSetIdCurrentRecipe}
+              />
+
+              <li key={recipe.id} onClick={this.handleSetIdCurrentRecipe}>
+                {recipe.title}
+              </li>
             </Link>
           </div>
         ))}
@@ -60,5 +75,7 @@ export default class SearcRecipe extends Component {
 }
 
 SearcRecipe.propTypes = {
-  name: PropTypes.string,
+  setIdCurrentRecipe: PropTypes.func.isRequired,
 };
+
+export default SearcRecipe;

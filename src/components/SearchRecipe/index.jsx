@@ -1,3 +1,3 @@
-import SearchRecipe from "./SearchRecipe";
+import SearchRecipe from "./SearchRecipeContainer";
 
 export default SearchRecipe;

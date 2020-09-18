@@ -1,7 +1,3 @@
-import React, { Component } from "react";
+import SimilarRecipe from "./SimilarRecipeContainer";
 
-export default class SimilarRecipe extends Component {
-  render() {
-    return <div> coucou </div>;
-  }
-}
+export default SimilarRecipe;

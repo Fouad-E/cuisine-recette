@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
-import SearchRecipe from "SearchRecipe";
-import { bindActionCreators } from "redux";
+import SearchRecipe from "./SearchRecipe";
 
-import setIdRecipe from "../../actions/recipes";
+import { setIdRecipe } from "../../actions/recipes";
 
-const mapActionToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
   setIdCurrentRecipe: (id) => dispatch(setIdRecipe(id)),
 });
 
-export default connect(null, mapActionToProps)(SearchRecipe);
+console.log("Container Search recipe called");
+
+export default connect(null, mapDispatchToProps)(SearchRecipe);

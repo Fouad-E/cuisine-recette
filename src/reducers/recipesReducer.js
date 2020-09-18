@@ -7,13 +7,15 @@ const defaultState = {
 export default (state = defaultState, action) => {
   switch (action.type) {
     case actions.SET_ID_CURRENT_RECIPE:
-      console.log("Id current recipe modified", action.id);
-      return [
+      console.log("Action  : ", action);
+
+      console.log("Type action  : ", action.type);
+      console.log("Id current recipe modified : ", action.idCurrentRecipe);
+
+      return {
         ...state,
-        {
-          id_current_recipe: action.id,
-        },
-      ];
+        id_current_recipe: action.idCurrentRecipe,
+      };
 
     default:
       return state;
