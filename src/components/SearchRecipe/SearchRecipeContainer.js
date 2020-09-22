@@ -3,10 +3,14 @@ import SearchRecipe from "./SearchRecipe";
 
 import { setIdRecipe } from "../../actions/recipes";
 
+const mapStateToProps = (state) => ({
+  idCurrect: state.id_current_recipe,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   setIdCurrentRecipe: (id) => dispatch(setIdRecipe(id)),
 });
 
 console.log("Container Search recipe called");
 
-export default connect(null, mapDispatchToProps)(SearchRecipe);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchRecipe);

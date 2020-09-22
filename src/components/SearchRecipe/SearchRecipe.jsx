@@ -44,6 +44,7 @@ class SearcRecipe extends Component {
     const { data } = this.state;
     return (
       <div>
+        <span> Id current : {this.props.idCurrent} </span>
         <Form>
           <FormGroup>
             <Label for="recipe"> Recipe</Label>

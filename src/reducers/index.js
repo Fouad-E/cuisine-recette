@@ -1,3 +1,6 @@
-import createRootReducer from "./createRootReducer";
+import { combineReducers } from "redux";
+import recipesReducer from "./recipesReducer";
 
-export default createRootReducer;
+export default combineReducers({
+  recipesReducer,
+});

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import SearchRecipe from "./components/SearchRecipe";
-import SimilarRecipe from "./components/SimilarRecipe";
+import SearchRecipe from "./components/SearchRecipe/SearchRecipeContainer";
+import SimilarRecipe from "./components/SimilarRecipe/SimilarRecipeContainer";
 
 import "./App.css";
 
