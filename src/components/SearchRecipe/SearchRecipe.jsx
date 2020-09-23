@@ -42,9 +42,10 @@ class SearcRecipe extends Component {
 
   render() {
     const { data } = this.state;
+    const { idCurrent } = this.props;
     return (
       <div>
-        <span> Id current : {this.props.idCurrent} </span>
+        <span> Id current : { idCurrent } </span>
         <Form>
           <FormGroup>
             <Label for="recipe"> Recipe</Label>
@@ -76,6 +77,7 @@ class SearcRecipe extends Component {
 }
 
 SearcRecipe.propTypes = {
+  idCurrent: PropTypes.number.isRequired,
   setIdCurrentRecipe: PropTypes.func.isRequired,
 };
 

@@ -1,9 +1,12 @@
 import { createStore } from "redux";
-import reducer from "../reducers/index";
+import reducer from "../reducers";
+
+
+const devTool = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 const store = createStore(
   reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  devTool
 );
 
 console.log("Initial state : ", store.getState());

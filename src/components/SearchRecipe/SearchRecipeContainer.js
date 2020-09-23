@@ -4,7 +4,7 @@ import SearchRecipe from "./SearchRecipe";
 import { setIdRecipe } from "../../actions/recipes";
 
 const mapStateToProps = (state) => ({
-  idCurrect: state.id_current_recipe,
+  idCurrent: state.recipe.id_current_recipe,
 });
 
 const mapDispatchToProps = (dispatch) => ({
