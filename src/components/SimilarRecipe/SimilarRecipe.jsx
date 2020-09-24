@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class SimilarRecipe extends Component {
-  render() {
-    console.log(this.props);
-    return <div> coucou id : {this.props.idRecipe}</div>;
-  }
-}
+const SimilarRecipe = (props) => {
+  const { dataSimilarRecipe } = props;
+  console.log("reçu : ", dataSimilarRecipe);
+  return <div>Similar Recipe: {JSON.stringify(props.dataSimilarRecipe)}</div>;
+};
+
+export default SimilarRecipe;

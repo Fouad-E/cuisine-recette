@@ -4,7 +4,7 @@ const initialState = {
   id_current_recipe: 0,
 };
 
-export default (state=initialState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case actions.SET_ID_CURRENT_RECIPE:
       console.log("Action  : ", action);
@@ -20,5 +20,4 @@ export default (state=initialState, action) => {
     default:
       return state;
   }
-  console.log("State modified : ", state);
 };

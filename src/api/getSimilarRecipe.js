@@ -4,11 +4,11 @@ export default (idRecipe = "") =>
   new Promise((resolve, reject) => {
     console.log(
       "URL API : ",
-      `${process.env.REACT_APP_API_URL_RECIPE}/${idRecipe}/information?apiKey=${process.env.REACT_APP_API_KEY}`
+      `${process.env.REACT_APP_API_URL_RECIPE}/${idRecipe}/similar?apiKey=${process.env.REACT_APP_API_KEY}`
     );
     axios
       .get(
-        `${process.env.REACT_APP_API_URL_RECIPE}/${idRecipe}/information?apiKey=${process.env.REACT_APP_API_KEY}`
+        `${process.env.REACT_APP_API_URL_RECIPE}/${idRecipe}/similar?apiKey=${process.env.REACT_APP_API_KEY}`
       )
       .then((response) => {
         console.log("Response ok :", response.data);

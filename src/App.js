@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchRecipe from "./components/SearchRecipe/SearchRecipeContainer";
-import SimilarRecipe from "./components/SimilarRecipe/SimilarRecipeContainer";
+import InformationRecipe from "./components/InformationsRecipe/InformationsRecipeContainer";
 
 import "./App.css";
 
@@ -15,8 +15,8 @@ function App() {
           <Route exact path="/">
             <SearchRecipe />
           </Route>
-          <Route path="/recipeInformation">
-            <SimilarRecipe />
+          <Route path="/informationsRecipe/:id">
+            <InformationRecipe />
           </Route>
         </Switch>
       </Router>
