@@ -11,6 +11,4 @@ const mapDispatchToProps = (dispatch) => ({
   setIdCurrentRecipe: (id) => dispatch(setIdRecipe(id)),
 });
 
-console.log("Container Search recipe called");
-
 export default connect(mapStateToProps, mapDispatchToProps)(SearchRecipe);

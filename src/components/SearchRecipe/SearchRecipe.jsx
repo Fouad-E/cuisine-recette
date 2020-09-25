@@ -6,7 +6,6 @@ import {
   Form,
   FormGroup,
   Input,
-  Label,
   Card,
   CardBody,
   CardTitle,
@@ -82,14 +81,15 @@ class SearcRecipe extends Component {
 
   render() {
     const { data } = this.state;
-    const { idCurrent } = this.props;
     return (
       <div>
-        <span> idCurrent : {idCurrent} </span>
         <Form>
           <FormGroup>
-            <Label for="recipe"> Recipe : </Label>
-            <Input type="text" onChange={this.onHandleChangeSearchRecipe} />
+            <Input
+              type="text"
+              placeholder="Recipe"
+              onChange={this.onHandleChangeSearchRecipe}
+            />
             <br />
             <label for="diets">Choose a diet : </label>
             <select id="diets" name="diets" onChange={this.onHandleChangeDiet}>
@@ -118,8 +118,11 @@ class SearcRecipe extends Component {
               <option value="pescetarian">Pescetarian</option>
             </select>
             <br />
-            <Label for="recipe">Max fat : </Label>
-            <Input type="text" onChange={this.onHandleChangeMaxFat} />
+            <Input
+              type="text"
+              placeholder="Max fat"
+              onChange={this.onHandleChangeMaxFat}
+            />
           </FormGroup>
 
           <Button onClick={this.onSubmit}>Search</Button>

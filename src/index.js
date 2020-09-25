@@ -6,6 +6,9 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import store from "./store/store";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 window.store = store;
 
 ReactDOM.render(
