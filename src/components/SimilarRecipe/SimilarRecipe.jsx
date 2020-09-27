@@ -1,42 +1,30 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-
 import { ListGroup, ListGroupItem, Badge } from "reactstrap";
 
-class SimilarRecipe extends Component {
-  constructor(props) {
-    super(props);
+import "./SimilarRecipe.css";
 
-    this.onHandleClickSimilarRecipe = this.onHandleClickSimilarRecipe.bind(
-      this
-    );
-  }
-
-  onHandleClickSimilarRecipe(e) {
-    const { setIdCurrentRecipe } = this.props;
-    console.log("Id similar recipe selected :", e);
-    // setIdCurrentRecipe(id);
-  }
-
-  render() {
-    const { dataSimilarRecipe } = this.props;
+const SimilarRecipe = (props) => {
+  const { dataSimilarRecipe, setIdCurrentRecipe } = props;
     console.log("reçu : ", dataSimilarRecipe);
-    return (
-      <div>
-        <ListGroup>
-          <ListGroupItem active>Similar recipe</ListGroupItem>
-          {dataSimilarRecipe.map((recipe) => (
-            <ListGroupItem onClick={this.onHandleClickSimilarRecipe}>
-              {" "}
-              <Link to={"/informationsRecipe/" + recipe.id}>
-                {recipe.title} <Badge pill>{recipe.servings}</Badge>
-              </Link>
-            </ListGroupItem>
-          ))}
-        </ListGroup>
-      </div>
-    );
-  }
+  return(
+    <div id="similarRecipe">
+      <ListGroup>
+        <ListGroupItem active>Similar recipe</ListGroupItem>
+        {dataSimilarRecipe.map((recipe) => (
+          <ListGroupItem>
+            {" "}
+            <Link to={"/informationsRecipe/" + recipe.id} onClick={ () => setIdCurrentRecipe(recipe.id) }>
+              {recipe.title} <br/>
+              <Badge pill>
+                {recipe.servings} person(s)
+              </Badge>
+            </Link>
+          </ListGroupItem>
+        ))}
+      </ListGroup>
+    </div>
+  );
 }
 
 export default SimilarRecipe;

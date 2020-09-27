@@ -1,0 +1,53 @@
+input.form-control{
+    width: 40%;
+    text-align: center;
+    margin: auto;
+}
+
+label{
+    margin-right: 5%;
+}
+
+
+select, option{
+    text-align-last: center;
+}
+
+.card-title{
+    text-align: center;
+}
+
+@media (max-width: 702px){
+    input.form-control{
+        width: 40%;
+    }
+   
+    div.form-group{
+        margin-top: 5%;
+    }
+
+    .catalogueRecipe{
+        width: 80%;
+        display: inline-table;
+        margin:auto;
+    }
+
+
+}
+
+@media (min-width: 703px){
+
+    div.form-group{
+        margin-top: 2%;
+    }
+
+    input.form-control{
+        width: 20%;
+    }
+
+    div.catalogueRecipe{
+        width: 20%;
+        display: inline-block;
+        margin:2%;
+    }
+}

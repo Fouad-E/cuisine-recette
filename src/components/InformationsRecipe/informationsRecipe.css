@@ -1,0 +1,39 @@
+#button-SaveRecipe{
+    margin: auto;
+}
+
+.card-img-top{
+    padding: 5%;
+}
+
+.card-body{
+    text-align: left;
+}
+
+#ingredientsRecipe{
+    margin:2%;
+}
+
+@media (max-width: 702px){
+    #informationsRecipe{
+        width: 80%;
+        margin: auto;
+    }
+    
+    #button-SaveRecipe{
+        width: 50%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 703px){
+    #informationsRecipe{
+        width: 70%;
+        margin: auto;
+    }
+    
+    #button-SaveRecipe{
+        width: 20%;
+        margin: auto;
+    }
+}
