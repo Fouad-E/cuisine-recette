@@ -1,6 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Projet Miam's
+
+This project named Miam's, search a recipe with specific filters. Besides, we can read recipe's ingredients and save one or more recipes in favorites recipes list. Finally, we can find a similar recipe of the recipe sought.
 
 ## Available Scripts
+
+In the project directory, install all packages :
+
+### `npm install`
 
 In the project directory, you can run:
 
