@@ -20,8 +20,6 @@ export default (searchWord, diet, type, maxFat) =>
     axios
       .get(url)
       .then((response) => {
-        console.log("URL API : ", url);
-        console.log("Response ok :", response.data.results);
         if (response && (response.status === 200 || response.status === 304)) {
           resolve(response.data.results);
         }

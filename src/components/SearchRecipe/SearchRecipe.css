@@ -1,53 +1,60 @@
-input.form-control{
-    width: 40%;
+label {
+  margin-right: 5%;
+}
+
+select,
+option {
+  text-align-last: center;
+}
+
+.card-title {
+  text-align: center;
+}
+
+#searchRecipeInput {
+  margin-bottom: 10px;
+}
+
+#maxFatInput {
+  width: 30%;
+  margin: auto;
+}
+
+@media (max-width: 702px) {
+  #searchRecipeInput {
+    width: 60%;
     text-align: center;
     margin: auto;
+  }
+
+  div.form-group {
+    margin-top: 5%;
+  }
+
+  .catalogueRecipe {
+    width: 80%;
+    display: inline-table;
+    margin: auto;
+  }
+
+  #buttonSearch {
+    margin-bottom: 10px;
+  }
 }
 
-label{
-    margin-right: 5%;
-}
+@media (min-width: 703px) {
+  div.form-group {
+    margin-top: 2%;
+  }
 
-
-select, option{
-    text-align-last: center;
-}
-
-.card-title{
+  #searchRecipeInput {
+    width: 30%;
     text-align: center;
-}
-
-@media (max-width: 702px){
-    input.form-control{
-        width: 40%;
-    }
-   
-    div.form-group{
-        margin-top: 5%;
-    }
-
-    .catalogueRecipe{
-        width: 80%;
-        display: inline-table;
-        margin:auto;
-    }
-
-
-}
-
-@media (min-width: 703px){
-
-    div.form-group{
-        margin-top: 2%;
-    }
-
-    input.form-control{
-        width: 20%;
-    }
-
-    div.catalogueRecipe{
-        width: 20%;
-        display: inline-block;
-        margin:2%;
-    }
+    margin: auto;
+  }
+  div.catalogueRecipe {
+    width: 20%;
+    display: inline-block;
+    margin: 2%;
+  }
 }

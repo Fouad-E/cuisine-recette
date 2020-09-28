@@ -12,7 +12,7 @@ import {
   CardImg,
 } from "reactstrap";
 
-import './SearchRecipe.css';
+import "./SearchRecipe.css";
 import getComplexRecipe from "../../api/getComplexRecipe";
 
 class SearcRecipe extends Component {
@@ -37,54 +37,48 @@ class SearcRecipe extends Component {
     this.handleSetIdCurrentRecipe = this.handleSetIdCurrentRecipe.bind(this);
   }
 
-
-  componentDidMount(){
+  componentDidMount() {
     // Initialize favorites recipe array in localstorage
-    if(localStorage.getItem("FavoritesRecipes")==null){
+    if (localStorage.getItem("FavoritesRecipes") == null) {
       localStorage.setItem("FavoritesRecipes", JSON.stringify([]));
     }
     // Save informations preview recipe searching if exist
     const lastSearchRecipe = JSON.parse(localStorage.getItem("searchRecipe"));
-    const lastSearchDiet =localStorage.getItem("searchDiet");
-    const lastSearchType =localStorage.getItem("searchType");
-    const lastSearchMaxFat =localStorage.getItem("searchmaxFat");
+    const lastSearchDiet = localStorage.getItem("searchDiet");
+    const lastSearchType = localStorage.getItem("searchType");
+    const lastSearchMaxFat = localStorage.getItem("searchmaxFat");
 
-    if(lastSearchRecipe!=null){
-      this.setState({dataCatalog: lastSearchRecipe});
+    if (lastSearchRecipe != null) {
+      this.setState({ dataCatalog: lastSearchRecipe });
     }
 
-    if(lastSearchDiet!=null){
-      this.setState({diet: lastSearchDiet});
+    if (lastSearchDiet != null) {
+      this.setState({ diet: lastSearchDiet });
     }
 
-    if(lastSearchType!=null){
-      this.setState({type: lastSearchType});
+    if (lastSearchType != null) {
+      this.setState({ type: lastSearchType });
     }
 
-    if(lastSearchMaxFat!=null){
-      this.setState({maxFat: lastSearchMaxFat});
+    if (lastSearchMaxFat != null) {
+      this.setState({ maxFat: lastSearchMaxFat });
     }
-    
   }
 
   onHandleChangeSearchRecipe(e) {
     this.setState({ searchWord: e.target.value });
-    console.log("Search word : ", this.state.searchWord);
   }
 
   onHandleChangeDiet(e) {
     this.setState({ diet: e.target.value });
-    console.log("Diet : ", this.state.diet);
   }
 
   onHandleChangeType(e) {
     this.setState({ type: e.target.value });
-    console.log("Type : ", this.state.type);
   }
 
   onHandleChangeMaxFat(e) {
     this.setState({ maxFat: e.target.value });
-    console.log("Max Fat : ", this.state.maxFat);
   }
 
   async onSubmit() {
@@ -95,24 +89,16 @@ class SearcRecipe extends Component {
       type,
       maxFat
     );
-    console.log("API RECU :", resultSearchRecette);
 
     this.setState({ dataCatalog: resultSearchRecette });
-    console.log("Data Catalog :", this.state.dataCatalog);
-    console.log("Cliqué !");
 
-    
     localStorage.setItem("searchRecipe", JSON.stringify(resultSearchRecette));
     localStorage.setItem("searchDiet", diet);
     localStorage.setItem("searchType", type);
     localStorage.setItem("searchmaxFat", maxFat);
-
   }
 
   handleSetIdCurrentRecipe = (e) => {
-    console.log("PROPS : ", this.props);
-    console.log("ID : ", e.target.alt);
-
     const { setIdCurrentRecipe } = this.props;
     setIdCurrentRecipe(e.target.alt);
   };
@@ -123,12 +109,15 @@ class SearcRecipe extends Component {
       <div>
         <Form>
           <FormGroup>
-            <Input
-              type="text"
-              placeholder="Recipe"
-              onChange={this.onHandleChangeSearchRecipe}
-            />
-            <br />
+            <div id="searchRecipe">
+              <label for="type"> Recipe : </label>
+              <Input
+                type="text"
+                id="searchRecipeInput"
+                placeholder="Pizza, chocolat, pancake ..."
+                onChange={this.onHandleChangeSearchRecipe}
+              />
+            </div>
             <label for="diets">Choose a diet : </label>
             <select id="diets" name="diets" onChange={this.onHandleChangeDiet}>
               <option value="All">All</option>
@@ -142,7 +131,6 @@ class SearcRecipe extends Component {
               <option value="pescetarian">Pescetarian</option>
             </select>
             <br />
-
             <label for="type">Choose a type of meals : </label>
             <select id="types" name="types" onChange={this.onHandleChangeType}>
               <option value="all">All</option>
@@ -156,15 +144,19 @@ class SearcRecipe extends Component {
               <option value="pescetarian">Pescetarian</option>
             </select>
             <br />
+            <label for="type"> Max fat : </label>
             <Input
               type="number"
+              id="maxFatInput"
               min="0"
-              placeholder="Max fat"
+              placeholder="100"
               onChange={this.onHandleChangeMaxFat}
             />
           </FormGroup>
 
-          <Button color="info" onClick={this.onSubmit}>Search</Button>
+          <Button id="buttonSearch" color="info" onClick={this.onSubmit}>
+            Search
+          </Button>
         </Form>
 
         {dataCatalog.map((recipe) => (
@@ -193,20 +185,3 @@ SearcRecipe.propTypes = {
 };
 
 export default SearcRecipe;
-
-/* 
-<Link to={"/informationsRecipe/" + recipe.id}>
-              <img
-                class="fit-picture"
-                src={recipe.image}
-                title={recipe.title}
-                alt={recipe.id}
-                onClick={this.handleSetIdCurrentRecipe}
-              />
-
-              <li key={recipe.id} onClick={this.handleSetIdCurrentRecipe}>
-                {recipe.title}
-              </li>
-            </Link>
-
-*/

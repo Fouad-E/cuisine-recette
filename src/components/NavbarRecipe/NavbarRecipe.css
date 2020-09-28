@@ -1,0 +1,7 @@
+.nav-link {
+  text-align: left;
+}
+
+.nav-link:hover {
+  font-weight: bold;
+}

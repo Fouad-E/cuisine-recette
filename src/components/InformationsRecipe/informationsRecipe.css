@@ -1,39 +1,41 @@
-#button-SaveRecipe{
+.card-img-top {
+  padding: 5%;
+}
+
+.card-body {
+  text-align: left;
+}
+
+#ingredientsRecipe {
+  margin: 2%;
+}
+
+#buttonSaveTheRecipe {
+  display: table;
+  margin: auto;
+  padding: 8px;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+#messageRecipeSaved {
+  display: table;
+  margin: auto;
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 702px) {
+  #informationsRecipe {
+    width: 80%;
     margin: auto;
+  }
 }
 
-.card-img-top{
-    padding: 5%;
-}
-
-.card-body{
-    text-align: left;
-}
-
-#ingredientsRecipe{
-    margin:2%;
-}
-
-@media (max-width: 702px){
-    #informationsRecipe{
-        width: 80%;
-        margin: auto;
-    }
-    
-    #button-SaveRecipe{
-        width: 50%;
-        margin: auto;
-    }
-}
-
-@media (min-width: 703px){
-    #informationsRecipe{
-        width: 70%;
-        margin: auto;
-    }
-    
-    #button-SaveRecipe{
-        width: 20%;
-        margin: auto;
-    }
+@media (min-width: 703px) {
+  #informationsRecipe {
+    width: 70%;
+    margin: auto;
+  }
 }
